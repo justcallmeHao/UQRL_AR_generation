@@ -1,0 +1,241 @@
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Camera,
+  Code2,
+  Cpu,
+  Database,
+  Globe,
+  Smartphone,
+  ArrowRight,
+  CheckCircle,
+  Github,
+  ExternalLink,
+  Scan
+} from "lucide-react";
+import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router-dom";
+
+const About = () => {
+  const steps = [
+    {
+      number: "01",
+      title: "Prepare Markers",
+      description: "Print or display supported markers with good lighting and contrast.",
+      icon: <Scan className="w-5 h-5" />
+    },
+    {
+      number: "02",
+      title: "Grant Camera Access",
+      description: "Allow browser camera access when prompted. Ensure good lighting conditions.",
+      icon: <Camera className="w-5 h-5" />
+    },
+    {
+      number: "03",
+      title: "Point and Track",
+      description: "Aim camera at marker. 3D objects render automatically when detected.",
+      icon: <CheckCircle className="w-5 h-5" />
+    }
+  ];
+
+  const techStack = [
+    {
+      category: "Frontend",
+      technologies: [
+        { name: "AR.js", description: "WebAR marker tracking library" },
+        { name: "A-Frame", description: "Web framework for VR/AR experiences" },
+        { name: "Three.js", description: "3D graphics rendering engine" },
+        { name: "React", description: "Component-based UI framework" }
+      ],
+      icon: <Globe className="w-5 h-5" />
+    },
+    {
+      category: "Backend",
+      technologies: [
+        { name: "FastAPI", description: "High-performance Python web framework" },
+        { name: "Python 3.9+", description: "Modern Python runtime environment" },
+        { name: "Uvicorn", description: "ASGI server for async applications" },
+        { name: "Pydantic", description: "Data validation and serialization" }
+      ],
+      icon: <Database className="w-5 h-5" />
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <Badge className="bg-primary/10 text-primary border border-primary/20">
+            Documentation & Guide
+          </Badge>
+
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground">
+            About UQRL AR
+          </h1>
+
+          <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            An open-source WebAR platform for real-time image tracking and 3D rendering.
+            Built for developers who need reliable, browser-based augmented reality.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button variant="default" size="lg" asChild>
+              <Link to="/ar-viewer">
+                <Camera className="w-5 h-5" />
+                Try AR Experience
+              </Link>
+            </Button>
+
+            <Button variant="outline" size="lg" asChild>
+              <a href="https://github.com/uqrl/ar-image-tracker" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5" />
+                View on GitHub
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Usage Guide */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+              How to Use
+            </h2>
+            <p className="font-body text-muted-foreground">
+              Three simple steps to start tracking
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <Card key={index} className="glass-panel p-8 text-center hover-lift smooth">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                  {step.icon}
+                </div>
+
+                <div className="font-display text-2xl font-semibold text-primary mb-4">{step.number}</div>
+                <h3 className="font-display text-lg font-medium text-foreground mb-4">{step.title}</h3>
+                <p className="font-body text-muted-foreground leading-relaxed">{step.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="py-20 px-6 bg-muted/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+              Technology Stack
+            </h2>
+            <p className="font-body text-muted-foreground">
+              Built with modern web technologies
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {techStack.map((category, index) => (
+              <Card key={index} className="glass-panel p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="text-primary">
+                    {category.icon}
+                  </div>
+                  <h3 className="font-display text-lg font-medium text-foreground">{category.category}</h3>
+                </div>
+
+                <div className="space-y-4">
+                  {category.technologies.map((tech, techIndex) => (
+                    <div key={techIndex} className="border-l-2 border-primary/30 pl-4">
+                      <div className="font-body font-medium text-foreground">{tech.name}</div>
+                      <div className="font-body text-sm text-muted-foreground">{tech.description}</div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Python Integration */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+              Python Integration
+            </h2>
+            <p className="font-body text-muted-foreground">
+              FastAPI backend for marker management and data processing
+            </p>
+          </div>
+
+          <Card className="glass-panel p-8">
+            <div className="space-y-6">
+              <div className="console p-4 rounded-lg">
+                <div className="text-primary mb-2 font-mono text-sm"># Install dependencies</div>
+                <div className="text-console-text font-mono text-sm">pip install fastapi uvicorn opencv-python</div>
+              </div>
+
+              <div className="console p-4 rounded-lg">
+                <div className="text-primary mb-2 font-mono text-sm"># Start development server</div>
+                <div className="text-console-text font-mono text-sm">uvicorn main:app --reload --port 8000</div>
+              </div>
+
+              <div className="console p-4 rounded-lg">
+                <div className="text-primary mb-2 font-mono text-sm"># API endpoints</div>
+                <div className="text-console-text font-mono text-sm space-y-1">
+                  <div>GET /api/markers - List available markers</div>
+                  <div>POST /api/tracking - Process tracking data</div>
+                  <div>GET /api/models/&#123;id&#125; - Serve 3D models</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center pt-6">
+              <Button variant="outline" asChild>
+                <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4" />
+                  FastAPI Documentation
+                </a>
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Open Source Badge */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <Badge className="bg-primary/10 text-primary border border-primary/20 text-lg px-6 py-2">
+            ⭐ Open Source Project
+          </Badge>
+
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+            Ready to Get Started?
+          </h2>
+          <p className="font-body text-xl text-muted-foreground">
+            Experience WebAR in your browser right now.
+          </p>
+
+          <Button variant="default" size="hero" asChild>
+            <Link to="/ar-viewer">
+              <Camera className="w-6 h-6" />
+              Launch AR Experience
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default About;

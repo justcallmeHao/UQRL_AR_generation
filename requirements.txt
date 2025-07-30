@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+jinja2
+mediapipe
 opencv-python
-numpy
-python-multipart  # required for FastAPI file uploads
+

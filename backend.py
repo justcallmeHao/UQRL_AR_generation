@@ -4,8 +4,8 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("public/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
-    return Path("templates/index.html").read_text(encoding="utf-8")
+    return Path("public/ar/ar-scene.html").read_text(encoding="utf-8")
