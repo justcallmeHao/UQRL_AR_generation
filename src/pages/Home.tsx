@@ -5,13 +5,19 @@ import { Badge } from "@/components/ui/badge";
 import { Camera, Github, ArrowRight, Scan, Code2, Zap } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import hiroMarker from "@/assets/hiro-marker.png";
+import whatisglb from "@/assets/whatisglb.png";
 
 const Home = () => {
   const supportedMarkers = [
     {
       name: "Hiro Pattern",
       image: hiroMarker,
-      description: "Classic AR.js marker"
+      description: "The Hiro marker is a default marker pattern used in the AR.js library for augmented reality applications. It serves as an anchor point for placing 3D content within a camera's view. Lagging may occur due to your camera resolution!"
+    },
+    {
+      name: "AR Object",
+      image: whatisglb,
+      description: "We suggest using glb file. Remember to rename the file to model.glb in public/static/models (or configure this project)."
     }
   ];
 
@@ -24,7 +30,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
           <Badge className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 smooth">
-            Open Source • AR.js • FastAPI
+            Open Source • Inspired by AR.js • UQ Reality Labs • Workshop
           </Badge>
 
           {/* Main Title */}
@@ -34,7 +40,7 @@ const Home = () => {
 
           {/* Subtitle */}
           <p className="font-body text-xl md:text-2xl text-muted-foreground leading-relaxed">
-            Scan image markers. Render 3D. All in your browser.
+            Scan image markers. Render 3D. All in your browser. No Game Engine required.
           </p>
 
           {/* CTA Button */}
@@ -68,15 +74,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Supported Markers Section */}
+      {/* Supported Materials Section */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-              Supported Markers
+              Supported Material you need for this project/workshop
             </h2>
             <p className="font-body text-muted-foreground">
-              High-contrast patterns for reliable tracking
+              Use High-contrast patterns for reliable tracking
             </p>
           </div>
 
@@ -112,18 +118,25 @@ const Home = () => {
             <span className="font-display font-semibold text-foreground">UQRL AR Image Tracker</span>
           </div>
 
+          <Badge className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 smooth">
+            Made by Hao Vo (as Workshop Director) from love. Cheers!!!
+          </Badge>
+
           <div className="flex items-center gap-6">
             <Button variant="ghost" size="sm" asChild>
               <Link to="/about" className="font-body">About</Link>
             </Button>
             <Button variant="ghost" size="sm" asChild>
-              <a href="https://github.com/uqrl/ar-image-tracker" target="_blank" rel="noopener noreferrer" className="font-body">
+              <a href="https://github.com/justcallmeHao/UQRL_AR_generation" target="_blank" rel="noopener noreferrer" className="font-body">
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
             </Button>
             <Button variant="ghost" size="sm" asChild>
-              <a href="mailto:contact@uqrl.dev" className="font-body">Contact</a>
+              <a href="https://www.linkedin.com/in/howlvoreworkingspace/" target="_blank" rel="noopener noreferrer" className="font-body">
+                <Github className="w-4 h-4" />
+                Contact author for feedbacks
+              </a>
             </Button>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Settings, Maximize, RotateCcw } from "lucide-react";
+import {ArrowLeft, Settings, Maximize, RotateCcw, Camera, Github} from "lucide-react";
 import { Link } from "react-router-dom";
+import {Badge} from "@/components/ui/badge.tsx";
 
 const ARViewer = () => {
 
@@ -29,9 +30,12 @@ const ARViewer = () => {
             <ArrowLeft className="w-5 h-5" />
           </Link>
         </Button>
+      </div>
 
-        <Button variant="glass" size="icon" onClick={openARScene}>
-          <Maximize className="w-5 h-5" />
+      {/* Top Controls */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 z-50">
+        <Button onClick={openARScene} variant="default">
+            🚀 Enter AR Mode 🚀
         </Button>
       </div>
     </div>

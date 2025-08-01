@@ -44,19 +44,18 @@ const About = () => {
       category: "Frontend",
       technologies: [
         { name: "AR.js", description: "WebAR marker tracking library" },
-        { name: "A-Frame", description: "Web framework for VR/AR experiences" },
-        { name: "Three.js", description: "3D graphics rendering engine" },
-        { name: "React", description: "Component-based UI framework" }
+        { name: "Node.js", description: "For FrontEnd templates" },
+        { name: "React", description: "Component-based UI framework" },
+        { name: "General HTMl & CSS", description: "For general web purpose" }
       ],
       icon: <Globe className="w-5 h-5" />
     },
     {
       category: "Backend",
       technologies: [
-        { name: "FastAPI", description: "High-performance Python web framework" },
-        { name: "Python 3.9+", description: "Modern Python runtime environment" },
-        { name: "Uvicorn", description: "ASGI server for async applications" },
-        { name: "Pydantic", description: "Data validation and serialization" }
+        { name: "Python", description: "Optional: if you decide you use minimal version from GitHub or Workshop" },
+        { name: "NPM", description: "For development hosting alongside with NodeJS" },
+        { name: "No backend", description: "As of current development, no other backend needed unless you want more customised configuration" }
       ],
       icon: <Database className="w-5 h-5" />
     }
@@ -91,7 +90,7 @@ const About = () => {
             </Button>
 
             <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com/uqrl/ar-image-tracker" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/justcallmeHao/UQRL_AR_generation" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
                 View on GitHub
                 <ExternalLink className="w-4 h-4" />
@@ -165,52 +164,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Python Integration */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-              Python Integration
-            </h2>
-            <p className="font-body text-muted-foreground">
-              FastAPI backend for marker management and data processing
-            </p>
-          </div>
-
-          <Card className="glass-panel p-8">
-            <div className="space-y-6">
-              <div className="console p-4 rounded-lg">
-                <div className="text-primary mb-2 font-mono text-sm"># Install dependencies</div>
-                <div className="text-console-text font-mono text-sm">pip install fastapi uvicorn opencv-python</div>
-              </div>
-
-              <div className="console p-4 rounded-lg">
-                <div className="text-primary mb-2 font-mono text-sm"># Start development server</div>
-                <div className="text-console-text font-mono text-sm">uvicorn main:app --reload --port 8000</div>
-              </div>
-
-              <div className="console p-4 rounded-lg">
-                <div className="text-primary mb-2 font-mono text-sm"># API endpoints</div>
-                <div className="text-console-text font-mono text-sm space-y-1">
-                  <div>GET /api/markers - List available markers</div>
-                  <div>POST /api/tracking - Process tracking data</div>
-                  <div>GET /api/models/&#123;id&#125; - Serve 3D models</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center pt-6">
-              <Button variant="outline" asChild>
-                <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4" />
-                  FastAPI Documentation
-                </a>
-              </Button>
-            </div>
-          </Card>
-        </div>
-      </section>
-
       {/* Open Source Badge */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -234,6 +187,40 @@ const About = () => {
           </Button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-12 px-6">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <Camera className="w-5 h-5 text-primary-foreground" />
+            </div>
+            <span className="font-display font-semibold text-foreground">UQRL AR Image Tracker</span>
+          </div>
+
+          <Badge className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 smooth">
+            Made by Hao Vo (as Workshop Director) from love. Cheers!!!
+          </Badge>
+
+          <div className="flex items-center gap-6">
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/about" className="font-body">About</Link>
+            </Button>
+            <Button variant="ghost" size="sm" asChild>
+              <a href="https://github.com/justcallmeHao/UQRL_AR_generation" target="_blank" rel="noopener noreferrer" className="font-body">
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+            </Button>
+            <Button variant="ghost" size="sm" asChild>
+              <a href="https://www.linkedin.com/in/howlvoreworkingspace/" target="_blank" rel="noopener noreferrer" className="font-body">
+                <Github className="w-4 h-4" />
+                Contact author for feedbacks
+              </a>
+            </Button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
