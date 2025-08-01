@@ -140,7 +140,7 @@ https://justcallmehao.github.io/UQRL_AR_generation/ar/ar-scene.html
 This project is developed by **UQ Reality Lab** (UQRL) for introductory workshops in AR and WebXR development.
 
 Special thanks to:
-- Hao Vo (@justcallmehao)
+- Hao Vo (@justcallmehao) [Contact](https://www.linkedin.com/in/howlvoreworkingspace/)
 
 ---
 
