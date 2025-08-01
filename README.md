@@ -26,7 +26,11 @@ All functionalities should be able to work on local hosting or other configurati
 
 ## 🖼️ Screenshot
 
-> _Insert a screenshot or GIF of the AR model on Hiro marker detection here._
+[Demo Video](repo_static/demo_uqrl_chopper.mp4)
+
+[Home Page](repo_static/home.png)
+
+[AR Scene](repo_static/ardemo.png)
 
 ---
 
