@@ -1,12 +1,32 @@
 # 🧠 UQRL AR Generation
 
-A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (UQRL)** for workshops and educational showcases. This project detects Hiro Markers and renders 3D models in AR using browser-native technologies — without the need for Unity or native apps.
+A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (UQRL)** for 
+workshops and educational showcases. This project detects Hiro Markers and renders 
+3D models in AR using browser-native technologies — without the need for Unity or native apps.
+
+The project is created for workshop: Introduction to VR/AR (Sem 2, 2025). We welcome anyone interest
+in our project to use it for their learning material.
+
+The project has provided a simple web-based integration of AR detection. The marker for detection
+is a Hiro mark. **You should use a printed Hiro mark. Camera deficiency and environment
+lighting will affect marker detection.**
 
 ---
 
 ## 🚀 Live Demo
 
 👉 [Launch AR Scene](https://justcallmehao.github.io/UQRL_AR_generation/ar/ar-scene.html)
+👉 [Preview UQRL Websiteonly](https://justcallmehao.github.io/UQRL_AR_generation)
+
+*Note*: Our GitHub deploy version will have different routing to the local project in this repo.
+GitHub deployment may not recognise the link between *Website* vs *AR* but local development works.
+We decided to keep it as it is for you to configure it on your own.
+
+All functionalities should be able to work on local hosting or other configuration/hosting.
+
+## 🖼️ Screenshot
+
+> _Insert a screenshot or GIF of the AR model on Hiro marker detection here._
 
 ---
 
@@ -15,23 +35,23 @@ A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (U
 ```
 .
 ├── public/                 # Static public assets
-│   └── ar-scene.html       # Main AR HTML entry point
+│   └── ar                  
+│       └── ar-scene.html   # Main AR HTML entry point
+│   └── static              
+│       └── models          
+│           └── model.glb   # !REPLACE HERE: any .glb model of your choice
 │
 ├── src/                    # Source code (React/Vite frontend)
-│   ├── assets/             # Images and icons (e.g. Hiro Marker)
-│   ├── components/         # UI components
-│   ├── main.tsx            # App entry point
+│   ├── assets/             
+│   ├── components/         
+│   ├── main.tsx            
 │   └── ...
 │
-├── static/models/          # 3D models used in AR
-│   └── model.glb
-│
-├── dist/                   # Production-ready output (auto-generated)
-│   └── ar/ar-scene.html
+├── dist/                   # Optional: Production-ready output (auto-generated)
 │
 ├── vite.config.ts          # Vite configuration
-├── package.json            # Project dependencies and scripts
-└── tsconfig.json           # TypeScript config
+├── package.json            # Optional based on your local machine
+└── ...                     # Other configuration
 ```
 
 ---
@@ -42,7 +62,7 @@ A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (U
 - **AR Engine**: [AR.js](https://ar-js-org.github.io/AR.js-Docs/) (Marker-based WebAR)
 - **3D Model Format**: `.glb` (GLTF Binary)
 - **Rendering**: A-Frame (built into AR.js)
-- **Deployment**: GitHub Pages via `gh-pages` branch
+- **Optional Deployment**: GitHub Pages via `gh-pages` branch
 
 ---
 
@@ -60,6 +80,8 @@ A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (U
 
 ### 1. Install dependencies
 
+*(Your package-lock.json created here, replace it with the current one in project)*
+
 ```bash
 npm install
 ```
@@ -70,13 +92,15 @@ npm install
 npm run dev
 ```
 
-### 3. Build for production
+*(Ctrl+C to exit local hosting session)*
+
+### 3. Build for production (Optional)
 
 ```bash
 npm run build
 ```
 
-### 4. Preview locally
+### 4. Preview locally (Optional)
 
 ```bash
 npm run preview
@@ -86,52 +110,49 @@ npm run preview
 
 ## 🌍 Deployment (GitHub Pages)
 
-### 1. Set Vite base in `vite.config.ts`:
-
-```ts
-export default defineConfig({
-  base: '/UQRL_AR_generation/',
-});
-```
-
-### 2. Add to `package.json`:
-
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-```
-
-### 3. Deploy:
+*We provide 2 versions for vite configuration. 
+We recommend you use the local development and the have your own
+config for any other use. Delete or comment out the right configuration*
 
 ```bash
-npm run deploy
+// For local development (Recommend)
+export default defineConfig(({ mode }) => ({
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [
+    react(),
+    mode === 'development' &&
+    componentTagger(),
+  ].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+}));
+
+// For GitHub hosting built
+export default defineConfig({
+   base: '/UQRL_AR_generation/',
+   plugins: [react()],
+   resolve: {
+     alias: {
+       "@": path.resolve(__dirname, "./src"),
+     },
+   },
+})
 ```
-
-### 4. GitHub Pages Settings:
-
-- **Branch**: `gh-pages`
-- **Folder**: `/ (root)`
-
-Your deployed URL will be:
-```
-https://justcallmehao.github.io/UQRL_AR_generation/ar/ar-scene.html
-```
-
----
-
-## 🖼️ Screenshot
-
-> _Insert a screenshot or GIF of the AR model on Hiro marker detection here._
-
 ---
 
 ## 📚 References
 
+Special thanks to tools/frameworks made from community
+
 - [AR.js Docs](https://ar-js-org.github.io/AR.js-Docs/)
 - [A-Frame Docs](https://aframe.io/docs/)
-- [GLTF format](https://cadexchanger.com/glb/)
+- [GLB Model](https://sketchfab.com/3d-models/tony-chopper-2619979aa9144373bd894685db999bda)
 
 ---
 
