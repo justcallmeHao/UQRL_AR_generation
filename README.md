@@ -26,11 +26,11 @@ All functionalities should be able to work on local hosting or other configurati
 
 ## 🖼️ Screenshot
 
-[Demo Video](repo_static/demo_uqrl_chopper.mp4)
+![Demo Video](repo_static/demo_uqrl_chopper.mp4)
 
-[Home Page](repo_static/home.png)
+![Home Page](repo_static/home.png)
 
-[AR Scene](repo_static/ardemo.png)
+![AR Scene](repo_static/ardemo.png)
 
 ---
 
