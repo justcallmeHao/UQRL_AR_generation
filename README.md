@@ -1,4 +1,4 @@
-# 🧠 UQRL AR Generation
+#🕶️  UQRL AR Generation 🕶️
 
 A practical web-based Augmented Reality (AR) demo created by **UQ Reality Lab (UQRL)** for 
 workshops and educational showcases. This project detects Hiro Markers and renders 
