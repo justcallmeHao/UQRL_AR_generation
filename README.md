@@ -24,13 +24,22 @@ We decided to keep it as it is for you to configure it on your own.
 
 All functionalities should be able to work on local hosting or other configuration/hosting.
 
-## 🖼️ Screenshot
+## 🖼️ Demos & Screenshots
 
-![Demo Video](repo_static/demo_uqrl_chopper.mp4.gif)
+**Main Demos:**
+
+![Demo Video](repo_static/demo_uqrl_chopper.gif)
 
 ![Home Page](repo_static/home.png)
 
 ![AR Scene](repo_static/ardemo.png)
+
+**We also include a Python version running in backend using uvicorn & FastAPI. The folder 'py_backend_ver' is 
+separated from the whole project. You can run it from backend manually. 
+This folder only serve for learning purposes and those may wish to use minimal functioning code.
+The Python demo:**
+
+![Py Demo](repo_static/demo_uqrl_dino.gif)
 
 ---
 

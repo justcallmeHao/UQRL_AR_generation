@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.arjs-loader {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #51247A;
+  border: 2px solid #FFB81C;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(81, 36, 122, 0.2);
+}
